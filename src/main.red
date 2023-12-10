@@ -11,6 +11,11 @@ view [
     below text "Upload file: "
     file-upload: file
     button "Send" on-action [
-        ; adding this in a bit
+        file: request-file/title/default
+        either file [
+            alert ["Selected file: " file]
+        ][
+            alert "No file selected."
+        ]
     ]
 ]
